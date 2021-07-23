@@ -1,1 +1,1 @@
-# mrothstein_circleci_traiing
+# mrothstein_circleci_training
