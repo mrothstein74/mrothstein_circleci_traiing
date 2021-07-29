@@ -1,18 +1,17 @@
-# Databases
+# Branch Filters
 
 **Description:**
 
-The user is attempting to run a node web application which connects to a Postgresql database. The user wants to know how to to add the database to their project.
+We have a `deploy` job in our Workflow. We have decided we only ever want to run our `deploy` job when we commit to the `production` branch
 
 **Goals:**
 
-- Modify the included config file to get a green job.
-- Share link to green job.
+- Ensure the `deploy` job only runs for the `production` branch.v
+- Create the required branch and meet the requirements above for a green Workflow.
+- Share link to green Workflow.
 
 **Help:**
 <details>
   <summary>Spoiler warning</summary>
-      * https://circleci.com/docs/2.0/postgres-config/
-      * https://github.com/Animosity/CraftIRC/wiki/Complete-idiot's-introduction-to-yaml
-      * https://circleci.com/docs/2.0/hello-world/#echo-hello-world-with-a-build-job
+  * https://circleci.com/docs/2.0/workflows-overview/
 </details>
