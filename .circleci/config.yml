@@ -18,7 +18,7 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: echo "Deploy complete"
+      - run: echo "Deploy completed"
 
 workflows:
   version: 2
