@@ -12,7 +12,7 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: echo "Testing complete"
+      - run: echo "Testing completed"
   deploy:
     docker:
       - image: circleci/node
