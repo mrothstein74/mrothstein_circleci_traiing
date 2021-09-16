@@ -12,7 +12,7 @@ jobs:
   build:
     executor:
       name: win/default
-      version: edge
+      version: stable
     steps:
       - checkout
       - run: node --version
