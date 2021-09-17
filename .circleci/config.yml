@@ -12,7 +12,7 @@ jobs:
   build:
     executor:
       name: win/default
-      version: stable
+      version: previous
     steps:
       - checkout
       - run: node --version
