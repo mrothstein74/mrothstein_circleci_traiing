@@ -12,9 +12,10 @@ jobs:
   build:
     executor:
       name: win/default
-      version: previous
+      version: edge
     steps:
       - checkout
-      - run: node --version
-      - run: go version
-      - run: powershell -command "& {Get-InstalledModule -Name 'CircleCIDSC' -AllVersions}"
+      - run: git clone git@github.com:beatcracker/VSCELicense.git
+      - run: ls -al
+      - run: ls -al VSCELicense
+     
