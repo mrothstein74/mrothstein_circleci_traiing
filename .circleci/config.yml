@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run: git clone git@github.com:beatcracker/VSCELicense.git
       - run:
-          name: update VS timeout value
+          name: update VS timeout value.
           shell: powershell.exe
           command: |
             Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
