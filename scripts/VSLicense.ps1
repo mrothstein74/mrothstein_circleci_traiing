@@ -1,6 +1,6 @@
 ﻿Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 
-Import-Module -Name 'C:\git\VSCELicense\VSCELicense.psd1'
+Import-Module -Name 'C:\Users\circleci\project\VSCELicense\VSCELicense.psd1'
 
 Get-VSCELicenseExpirationDate -Version 2019
 
