@@ -12,19 +12,9 @@ jobs:
   build:
     executor:
       name: win/default
-      version: edge
+      version: internal
     steps:
       - checkout
-      - run: git clone git@github.com:beatcracker/VSCELicense.git
-      - run:
-          name: update VS timeout value.
-          shell: powershell.exe
-          command: |
-            $currentDir = Get-Location
-            Write-Output "Directory is: $currentDir"
-            Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
-            $schAction = New-ScheduledTaskAction -Execute "Powershell.exe" -Argument '-NoProfile -WindowStyle Hidden -File "C:\Users\circleci\project\scripts\VSLicense.ps1"'
-            $schTrigger = New-ScheduledTaskTrigger -AtStartup
-            $schPrincipal = New-ScheduledTaskPrincipal -UserId "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount
-            Register-ScheduledTask -Action $schAction -Trigger $schTrigger -TaskName "vstest" -Description "Scheduled Task to run vs  configuration Script At Startup" -Principal $schPrincipal
-     
+      - run: node --version
+      - run: go version
+      - run: powershell -command "& {Get-InstalledModule -Name 'CircleCIDSC' -AllVersions}"
