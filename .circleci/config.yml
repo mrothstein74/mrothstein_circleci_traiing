@@ -17,4 +17,3 @@ jobs:
       - checkout
       - run: node --version
       - run: go version
-      - run: powershell -command "& {Get-InstalledModule -Name 'CircleCIDSC' -AllVersions}"
