@@ -17,4 +17,5 @@ jobs:
       - checkout
       - run: node --version
       - run: go version
+      - run: ls
       
