@@ -12,7 +12,7 @@ jobs:
   build:
     executor:
       name: win/default
-      version: internal
+      version: edge
     steps:
       - checkout
       - run: go version
