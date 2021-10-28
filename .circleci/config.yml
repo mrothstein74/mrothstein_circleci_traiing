@@ -13,8 +13,11 @@ jobs:
     executor:
       name: win/default
       version: edge
+      shell: cmd.exe
     steps:
       - checkout
-      - run: go version
-      - run: powershell -command "& {Get-InstalledModule -Name 'CircleCIDSC' -AllVersions}"
+      - run:
+          name: build
+          shell: cmd.exe
+          command: bat\bat1.bat
       
