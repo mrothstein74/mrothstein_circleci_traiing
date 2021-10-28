@@ -1,2 +1,2 @@
 REM echo "This is bat1"
-call "bat2.bat"
+call %~dp0\bat2.bat
