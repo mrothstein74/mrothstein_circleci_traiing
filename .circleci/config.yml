@@ -12,12 +12,10 @@ jobs:
   build:
     executor:
       name: win/default
-      version: edge
+      version: internal
       shell: cmd.exe
     steps:
       - checkout
-      - run:
-          name: build
-          shell: cmd.exe
-          command: bat\bat1.bat
+      - run: echo Hello World
+          
       
