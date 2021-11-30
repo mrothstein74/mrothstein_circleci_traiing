@@ -12,7 +12,7 @@ jobs:
   build:
     executor:
       name: win/default
-      version: internal
+      version: edge
       shell: cmd.exe
     steps:
       - checkout
