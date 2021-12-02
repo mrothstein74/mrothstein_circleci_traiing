@@ -5,6 +5,6 @@ jobs:
     steps:
       - name: Trigger CircleCI Pipeline
         id: citrigger
-        uses: https://github.com/KyleTryon/GHA_Trigger_For_CCI/tags
+        uses: KyleTryon/GHA_Trigger_For_CCI@v2.10
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
