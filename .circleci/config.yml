@@ -18,7 +18,6 @@ orbs:
   win: circleci/windows@2.2.0 
 
 workflows:
-  when: << pipeline.parameters.GHA_Action >>
   main:
     jobs:
       - build
