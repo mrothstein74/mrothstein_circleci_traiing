@@ -11,7 +11,7 @@ workflows:
 jobs:
   build:
     executor:
-      name: win/default
+      name: win/gpu-nvidia
       version: stable
       shell: cmd.exe
     steps:
