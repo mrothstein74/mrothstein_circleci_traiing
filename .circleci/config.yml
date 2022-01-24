@@ -16,6 +16,6 @@ jobs:
       shell: cmd.exe
     steps:
       - checkout
-      - run: ssh -v
+      - run: ssh -V
           
       
