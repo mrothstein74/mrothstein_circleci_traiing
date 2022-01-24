@@ -11,11 +11,11 @@ workflows:
 jobs:
   build:
     executor:
-      name: win/gpu-nvidia
-      version: stable
+      name: win/default
+      version: edge
       shell: cmd.exe
     steps:
       - checkout
-      - run: echo Hello World!
+      - run: ssh -v
           
       
