@@ -16,6 +16,6 @@ jobs:
       shell: cmd.exe
     steps:
       - checkout
-      - run: python3 -V
+      - run: python -V
           
       
