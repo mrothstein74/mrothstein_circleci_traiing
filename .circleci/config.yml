@@ -11,11 +11,11 @@ workflows:
 jobs:
   build:
     executor:
-      name: win/gpu-nvidia
+      name: win/default
       version: edge
       shell: cmd.exe
     steps:
       - checkout
-      - run: ssh -V
+      - run: python3 -V
           
       
