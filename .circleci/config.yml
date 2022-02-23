@@ -12,10 +12,11 @@ jobs:
   build:
     executor:
       name: win/default
-      version: edge
+      version: internal
       shell: cmd.exe
     steps:
       - checkout
       - run: python -V
+      - run: py --list
           
       
