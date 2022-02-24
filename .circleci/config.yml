@@ -12,11 +12,11 @@ jobs:
   build:
     executor:
       name: win/default
-      version: internal
+      version: stable
       shell: cmd.exe
     steps:
       - checkout
-      - run: python -V
+      - run: python --version
       - run: py --list
           
       
