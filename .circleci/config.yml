@@ -9,6 +9,7 @@ jobs:
   build:
     machine:
       image: windows-server-2022-vs2022:1646182006
+      resource_class: windows.large
     steps:
       - checkout
       - run: python --version
