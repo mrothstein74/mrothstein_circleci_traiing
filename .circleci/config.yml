@@ -1,7 +1,4 @@
-version: 2.1
-
-orbs:
-  win: circleci/windows@2.3.0 
+version: 2.1 
 
 workflows:
   main:
@@ -10,10 +7,8 @@ workflows:
 
 jobs:
   build:
-    executor:
-      name: win/default
-      version: stable
-      shell: cmd.exe
+    machine:
+      image: windows-server-2022-vs2022:1646182006
     steps:
       - checkout
       - run: python --version
