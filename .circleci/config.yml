@@ -14,5 +14,6 @@ jobs:
     steps:
       - checkout
       - run: python --version
+      - run: py --version
           
       
