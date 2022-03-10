@@ -13,7 +13,8 @@ jobs:
       shell: powershell.exe -ExecutionPolicy Bypass
     steps:
       - checkout
-      - run: msbuild -t:Restore;Build Fibonacci.csproj
+      - run: msbuild -t:Restore | 
+             Build Fibonacci.csproj
       
           
       
