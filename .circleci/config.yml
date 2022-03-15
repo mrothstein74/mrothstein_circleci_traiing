@@ -8,13 +8,12 @@ workflows:
 jobs:
   build:
     machine:
-      image: 'windows-server-2022-vs2022:edge'
+      image: 'windows-server-2022-gui:edge'
       resource_class: windows.large
       shell: powershell.exe -ExecutionPolicy Bypass
     steps:
       - checkout
-      - run: msbuild -t:Restore | 
-             Build Fibonacci.csproj
+      - run: python --version
       
           
       
