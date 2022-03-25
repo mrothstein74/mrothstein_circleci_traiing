@@ -3,9 +3,10 @@ orbs:
   win: circleci/windows@4.0
 jobs:
   build:
-    executor: win/server-2022
-    version: "internal"
-    variant: "gui"
+    executor:
+      name: win/server-2022
+      version: internal
+      variant: gui
     steps:
        - run: Write-Host 'Hello, Windows..'
 workflows:
@@ -13,5 +14,6 @@ workflows:
       jobs:
         - build
       
-          
+executors:
+  server-2022 
       
