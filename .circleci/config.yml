@@ -5,6 +5,7 @@ jobs:
   build:
     executor: win/server-2022
     version: internal
+    variant: gui
     steps:
        - run: Write-Host 'Hello, Windows..'
 workflows:
