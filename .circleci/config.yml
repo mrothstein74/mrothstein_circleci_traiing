@@ -13,7 +13,5 @@ workflows:
    my-workflow:
       jobs:
         - build
-      
-executors:
-  server-2022 
+
       
