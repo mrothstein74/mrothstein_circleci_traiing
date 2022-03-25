@@ -1,19 +1,15 @@
-version: 2.1 
-
-workflows:
-  main:
-    jobs:
-      - build
-
+version: 2.1
+orbs:
+  win: circleci/windows@4.0
 jobs:
   build:
-    machine:
-      image: 'windows-server-2019-vs2019:edge'
-      resource_class: windows.large
-      shell: powershell.exe -ExecutionPolicy Bypass
+    executor: win/server-2022
     steps:
-      - checkout
-      - run: python --version
+       - run: Write-Host 'Hello, Windows'
+workflows:
+   my-workflow:
+      jobs:
+        - build
       
           
       
