@@ -8,7 +8,7 @@ jobs:
       version: internal
       variant: gui
     steps:
-       - run: Write-Host 'Hello, Windows..'
+       - run: ssh -V
 workflows:
    my-workflow:
       jobs:
