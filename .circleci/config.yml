@@ -1,9 +1,5 @@
   version: 2.1
 
-  workflows:
-    build-app:
-      jobs:
-        - build
   jobs:
     build:
       machine:
