@@ -1,19 +1,13 @@
-# test
-
-version: 2.1
-orbs:
-  win: circleci/windows@4.0
-jobs:
-  build:
-    executor:
-      name: win/server-2022 
-      version: edge
-      variant: gui
-    steps:
-       - run: ssh -V
-workflows:
-   my-workflow:
+  version: 2.1
+  orbs:
+    win: circleci/windows@4.0
+  jobs:
+    build:
+      executor: win/server-2022
+      steps:
+        - run: Write-Host 'Hello, Windows'
+  workflows:
+    my-workflow:
       jobs:
         - build
-
       
