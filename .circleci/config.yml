@@ -3,7 +3,7 @@
   jobs:
     build:
       machine:
-        image: 'windows-server-2022-gui:edge'
+        image: 'windows-server-2019-vs2019:edge'
         resource_class: windows.large
         shell: powershell.exe -ExecutionPolicy Bypass
       steps:
