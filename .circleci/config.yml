@@ -5,7 +5,7 @@ jobs:
   build:
     executor:
       name: win/server-2022
-      version: internal
+      version: edge
       variant: gui
     steps:
        - run: ssh -V
