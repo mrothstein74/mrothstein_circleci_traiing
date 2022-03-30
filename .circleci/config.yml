@@ -3,7 +3,7 @@
   jobs:
     build:
       machine:
-        image: 'windows-server-2019-cuda-medium:stable'
+        image: 'windows-server-2019-nvidia:edge'
         resource_class: windows.medium
         shell: powershell.exe -ExecutionPolicy Bypass
       steps:
