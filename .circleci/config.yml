@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     machine:
-      image: 'windows-server-2019-nvidia:current'
+      image: 'windows-server-2019-nvidia:stable'
       resource_class: windows.gpu.nvidia.medium
       shell: powershell.exe -ExecutionPolicy Bypass
     steps:
