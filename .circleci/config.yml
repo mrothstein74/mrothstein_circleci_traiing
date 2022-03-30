@@ -3,8 +3,8 @@ version: 2.1
 jobs:
   build:
     machine:
-      image: 'windows-server-2022-gui:edge'
-      resource_class: windows.medium
+      image: 'windows-server-2019-nvidia:current'
+      resource_class: windows.gpu.nvidia.medium
       shell: powershell.exe -ExecutionPolicy Bypass
     steps:
       - run: Write-Host 'Hello, Windows'
