@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     machine:
-      image: 'windows-server-2022-gui:edge'
+      image: 'windows-server-2022-gui:internal'
       resource_class: windows.medium
       shell: powershell.exe -ExecutionPolicy Bypass
     steps:
