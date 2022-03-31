@@ -4,7 +4,7 @@ jobs:
   build:
     machine:
       image: 'windows-server-2022-gui:edge'
-      resource_class: windows.gpu.nvidia.medium
+      resource_class: windows.medium
       shell: powershell.exe -ExecutionPolicy Bypass
     steps:
       - run: docker
