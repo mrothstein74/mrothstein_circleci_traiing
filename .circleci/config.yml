@@ -1,11 +1,13 @@
 version: 2.1
-# test 2
+orbs:
+  win: circleci/windows@4.1
 jobs:
   build:
-    machine:
-      image: 'windows-server-2022-gui:current'
-      resource_class: windows.medium
-      shell: powershell.exe -ExecutionPolicy Bypass
+    executor: win/server-2022
     steps:
-      - run: docker
+      - run: Write-Host 'Hello, Windows'
+workflows:
+  my-workflow:
+    jobs:
+      - build
   
