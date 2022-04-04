@@ -4,8 +4,9 @@ orbs:
 jobs:
   build:
     executor: win/server-2022
+    version: internal
     steps:
-      - run: Write-Host 'Hello, Windows'
+      - run: docker version
 workflows:
   my-workflow:
     jobs:
