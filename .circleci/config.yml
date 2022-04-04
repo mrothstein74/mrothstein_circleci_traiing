@@ -7,7 +7,7 @@ jobs:
       name: win/server-2022
       version: internal
     steps:
-      - run: docker version
+      - run: nvm --version
 workflows:
   my-workflow:
     jobs:
