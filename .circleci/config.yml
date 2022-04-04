@@ -3,8 +3,9 @@ orbs:
   win: circleci/windows@4.1
 jobs:
   build:
-    executor: win/server-2022
-    version: internal
+    executor: 
+      name: win/server-2022
+      version: internal
     steps:
       - run: docker version
 workflows:
