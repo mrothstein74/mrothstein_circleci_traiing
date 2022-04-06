@@ -1,12 +1,9 @@
 version: 2.1
-orbs:
-  win: circleci/windows@4.1
 jobs:
-  build:
-    executor: win/server-2022
+  build-windows:
+    machine:
+      image: windows-server-2022:current
+      resource_class: windows.medium
+      shell: powershell.exe -ExecutionPolicy Bypass
     steps:
-      - run: Write-Host 'Hello, Windows'
-workflows:
-  my-workflow:
-    jobs:
-      - build
+      - run: echo 'test'
