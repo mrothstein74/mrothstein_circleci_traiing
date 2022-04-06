@@ -1,15 +1,20 @@
-version: 2.1 # Use version 2.1 to enable orb usage.
+version: 2.1
 
 orbs:
-  win: circleci/windows@4.1 # The Windows orb give you everything you need to start using the Windows executor.
+  win: circleci/windows@4.1
 
 jobs:
-  build: # name of your job
+  build:
     executor:
-      name: win/default # executor type
-      size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
-
+      name: win/default
     steps:
-      # Commands are run in a Windows virtual machine environment
-      - checkout
-      - run: Write-Host 'Hello, Windows'
+      # default shell is Powershell
+      - run:
+         command: $(echo hello | Out-Host; $?) -and $(echo world | Out-Host; $?)
+         shell: powershell.exe
+      - run:
+         command: echo hello && echo world
+         shell: bash.exe
+      - run:
+         command: echo hello & echo world
+         shell: cmd.exe
