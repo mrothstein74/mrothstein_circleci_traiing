@@ -1,15 +1,15 @@
-version: 2.1
+version: 2.1 # Use version 2.1 to enable orb usage.
 
-workflows:
-  build-and-unittest:
-    jobs:
-      - build-windows
+orbs:
+  win: circleci/windows@4.1 # The Windows orb give you everything you need to start using the Windows executor.
 
 jobs:
-  build-windows:
-    machine:
-      image: windows-server-2022-gui:current
-      resource_class: windows.medium
-      shell: powershell.exe -ExecutionPolicy Bypass
+  build: # name of your job
+    executor:
+      name: win/default # executor type
+      size: "medium" # resource class, can be "medium", "large", "xlarge", "2xlarge", defaults to "medium" if not specified
+
     steps:
-      - run: echo 'test'
+      # Commands are run in a Windows virtual machine environment
+      - checkout
+      - run: Write-Host 'Hello, Windows'
