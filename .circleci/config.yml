@@ -1,4 +1,10 @@
 version: 2.1
+
+workflows:
+  build-and-unittest:
+    jobs:
+      - build-windows
+
 jobs:
   build-windows:
     machine:
