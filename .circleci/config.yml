@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build: # name of your job
     machine:
-      image: windows-server-2019-vs2019
+      image: windows-server-2019-vs2019:current
     resource_class: windows.medium
     steps:
       - checkout
