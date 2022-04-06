@@ -1,16 +1,12 @@
 version: 2.1
-
+orbs:
+  win: circleci/windows@4.1
 jobs:
-  build: # name of your job
-    machine:
-      image: windows-server-2019-vs2019:current
-    resource_class: windows.medium
+  build:
+    executor: win/server-2022
     steps:
-      - checkout
-      - run: systeminfo
-      - run:
-          name: "Check docker"
-          shell: powershell.exe
-          command: |
-            docker info
-            docker run hello-world:nanoserver-1809
+      - run: Write-Host 'Hello, Windows'
+workflows:
+  my-workflow:
+    jobs:
+      - build
