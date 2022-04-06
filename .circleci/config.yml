@@ -1,15 +1,19 @@
 version: 2.1
+
 orbs:
   win: circleci/windows@4.1
+
 jobs:
   build:
-    executor: 
-      name: win/server-2022
-      version: internal
+    executor:
+      name: win/default
+      shell: powershell.exe
     steps:
-      - run: nvm --version
-workflows:
-  my-workflow:
-    jobs:
-      - build
-  
+      - checkout
+      - run: systeminfo
+      - run:
+          name: "Check docker"
+          shell: powershell.exe
+          command: |
+            docker info
+            docker run hello-world:nanoserver-1809
