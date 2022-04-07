@@ -1,12 +1,15 @@
 version: 2.1
-orbs:
-  win: circleci/windows@4.1
-jobs:
-  build:
-    executor: win/server-2019
-    steps:
-      - run: Write-Host 'Hello, Windows'
+
 workflows:
-  my-workflow:
+  build-and-unittest:
     jobs:
-      - build
+      - build-windows
+
+jobs:
+  build-windows:
+    machine:
+      image: windows-server-2022-gui:internal
+      resource_class: windows.medium
+      shell: powershell.exe -ExecutionPolicy Bypass
+    steps:
+      - run: docker version
