@@ -8,7 +8,7 @@ workflows:
 jobs:
   build-windows:
     machine:
-      image: windows-server-2022-gui:internal
+      image: windows-server-2022-gui:edge
       resource_class: windows.medium
       shell: powershell.exe -ExecutionPolicy Bypass
     steps:
