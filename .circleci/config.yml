@@ -3,10 +3,10 @@ version: 2.1
 workflows:
   build-and-unittest:
     jobs:
-      - build
+      - build-win
 
 jobs:
-  build:
+  build-win:
     machine:
       image: windows-server-2022-gui:edge
     steps:
