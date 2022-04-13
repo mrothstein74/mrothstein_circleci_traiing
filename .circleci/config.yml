@@ -4,11 +4,11 @@ workflows:
   build-and-unittest:
     jobs:
       - build-windows
-      
+
 jobs:
   build-windows:
     machine:
-      image: windows-server-2022-gui:current
+      image: windows-server-2022-gui:edge
       resource_class: windows.large
       shell: powershell.exe -ExecutionPolicy Bypass
     steps:
