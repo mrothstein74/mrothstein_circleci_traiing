@@ -3,13 +3,12 @@ version: 2.1
 workflows:
   build-and-unittest:
     jobs:
-      - build-windows
+      - build
 
 jobs:
-  build-windows:
+  build:
     machine:
       image: windows-server-2022-gui:edge
-      resource_class: windows.large
-      shell: powershell.exe -ExecutionPolicy Bypass
+      docker_layer_caching: true
     steps:
-      - run: docker version
+      - checkout
