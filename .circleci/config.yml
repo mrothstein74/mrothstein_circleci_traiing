@@ -4,12 +4,12 @@ workflows:
   build-and-unittest:
     jobs:
       - build-windows
-
+      
 jobs:
   build-windows:
     machine:
-      image: windows-server-2022-gui:edge
-      resource_class: windows.medium
+      image: windows-server-2022-gui:current
+      resource_class: windows.large
       shell: powershell.exe -ExecutionPolicy Bypass
     steps:
       - run: docker version
