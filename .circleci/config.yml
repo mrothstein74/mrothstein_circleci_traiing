@@ -16,9 +16,9 @@ jobs:
       - run: docker version
       - run:
           name: Install Test converter
-          command: dotnet tool install --global trx2junit
+          command: dotnet tool install --tool-path . dotnetsay
           shell: cmd.exe
       - run:
           name: test tool
-          command: trx2junit
+          command: .\dotnetsay
           shell: cmd.exe
