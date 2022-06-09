@@ -8,9 +8,13 @@ workflows:
 jobs:
   build-windows:
     machine:
-      image: windows-server-2022-gui:current
+      image: windows-server-2022-gui:edge
       resource_class: windows.large
       shell: powershell.exe -ExecutionPolicy Bypass
       docker_layer_caching: true
     steps:
       - run: docker version
+      - run:
+          name: Install Test converter
+          command: dotnet tool install --global trx2junit
+          shell: cmd.exe
