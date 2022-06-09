@@ -18,3 +18,7 @@ jobs:
           name: Install Test converter
           command: dotnet tool install --global trx2junit
           shell: cmd.exe
+      - run:
+          name: test tool
+          command: trx2junit
+          shell: cmd.exe
