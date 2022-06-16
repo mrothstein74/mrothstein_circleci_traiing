@@ -8,7 +8,7 @@ workflows:
 jobs:
   build-windows:
     machine:
-      image: windows-server-2019-nvidia:stable
+      image: windows-server-2019-nvidia:current
       resource_class: windows.large
       shell: powershell.exe -ExecutionPolicy Bypass
       docker_layer_caching: true
