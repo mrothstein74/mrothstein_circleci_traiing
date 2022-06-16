@@ -9,7 +9,7 @@ jobs:
   build-windows:
     machine:
       image: windows-server-2019-nvidia-medium:current
-      resource_class: gpu-nvidia-medium
+      resource_class: windows.gpu-nvidia-medium
       shell: powershell.exe -ExecutionPolicy Bypass
       docker_layer_caching: true
     steps:
