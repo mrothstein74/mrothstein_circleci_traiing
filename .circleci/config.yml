@@ -13,7 +13,7 @@ jobs:
       #resource_class: windows.gpu.nvidia.medium
       resource_class: windows.medium
       shell: powershell.exe -ExecutionPolicy Bypass
-      docker_layer_caching: true
+      #docker_layer_caching: true
     steps:
       - run: docker version
       - run:
