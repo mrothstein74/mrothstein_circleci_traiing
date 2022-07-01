@@ -21,7 +21,6 @@ jobs:
           command: | 
             setx PUNX DEKT
             refreshenv
-            echo 2>&1 "HELLO"
-          shell: cmd.exe
+      - run: echo "hello world"
       
      
