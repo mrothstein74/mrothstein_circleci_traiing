@@ -21,7 +21,7 @@ jobs:
           command: | 
             setx PUNX DEKT
             refreshenv
-            set
+            echo HELLO
           shell: cmd.exe
       
      
