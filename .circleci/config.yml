@@ -13,23 +13,15 @@ jobs:
       image: windows-server-2022-gui:current
       #resource_class: windows.gpu.nvidia.medium
       resource_class: windows.medium
-      #shell: powershell.exe -ExecutionPolicy Bypass
+      shell: powershell.exe -ExecutionPolicy Bypass
       #docker_layer_caching: true
     steps:
       - run:
           name: set env var
-          command: setx PUNX DEKT
+          command: | 
+            setx PUNX DEKT
+            refreshenv
+            echo %PUNX%
           shell: cmd.exe
-      - run:
-          name: refresh env var
-          command: refreshenv
-          shell: cmd.exe
-      - run:
-          name: get env var (cmd)
-          command: echo %PUNX%
-          shell: cmd.exe
-      - run:
-          name: get env var (powershell)
-          command: $Env:PUNX
-          shell: powershell.exe -ExecutionPolicy Bypass
+      
      
