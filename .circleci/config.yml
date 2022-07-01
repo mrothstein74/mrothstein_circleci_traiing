@@ -24,3 +24,6 @@ jobs:
             refreshenv
             echo %PUNX%
           shell: cmd.exe
+      - run:
+          name: set env var
+          command: $Env: PUNX
