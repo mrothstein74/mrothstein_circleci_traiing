@@ -19,11 +19,11 @@ jobs:
       - run:
           name: set env var
           command: |
-            Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
             "[Environment]::SetEnvironmentVariable('TEST', 'VALUE', 'Machine')"
       - run:
           name: get env var
           command: |
+            Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
             Update-SessionEnvironment
             $Env:TEST
    
