@@ -13,16 +13,16 @@ jobs:
       image: windows-server-2022-gui:current
       #resource_class: windows.gpu.nvidia.medium
       resource_class: windows.medium
-      shell: powershell.exe
+      shell: powershell.exe -ExecutionPolicy Bypass
       #docker_layer_caching: true
     steps:
       - run:
           name: set env var
-          command: "[Environment]::SetEnvironmentVariable('FOO', 'BAR', 'Machine')"
+          command: |
+            'setx PUNX DEKT'
+            refreshenv
+          shell: cmd.exe
       - run:
           name: get env var
-          command: $Env:FOO
-      - run:
-          name: get env var
-          command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' FOO 
-          shell: powershell.exe -ExecutionPolicy Bypass
+          command: $Env:PUNX
+     
