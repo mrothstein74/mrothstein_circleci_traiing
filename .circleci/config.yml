@@ -31,5 +31,5 @@ jobs:
           shell: powershell.exe -ExecutionPolicy Bypass
       - run:
           name: get env var
-          command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' FOO 
+          command: (Get-Item -Path Env:FOO).Value
           shell: powershell.exe -ExecutionPolicy Bypass
