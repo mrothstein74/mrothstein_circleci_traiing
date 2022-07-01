@@ -19,7 +19,7 @@ jobs:
       - run:
           name: set env var
           command: |
-            'setx PUNX DEKT'
+            setx PUNX DEKT /m
             refreshenv
           shell: cmd.exe
       - run:
