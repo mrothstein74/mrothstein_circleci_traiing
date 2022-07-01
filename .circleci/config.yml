@@ -18,7 +18,7 @@ jobs:
     steps:
       - run:
           name: set env var
-          command: setx PUNX DEKT /m
+          command: setx PUNX DEKT
           shell: cmd.exe
       - run:
           name: refresh env var
