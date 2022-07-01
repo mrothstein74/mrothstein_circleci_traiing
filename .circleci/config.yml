@@ -19,7 +19,7 @@ jobs:
       - run:
           name: set env var
           command: |
-            [Environment]::SetEnvironmentVariable('TEST', 'VALUE', 'Machine')
+            "[Environment]::SetEnvironmentVariable('TEST', 'VALUE', 'Machine')"
             Update-SessionEnvironment
       - run:
           name: get env var
