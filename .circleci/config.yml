@@ -31,4 +31,5 @@ jobs:
           shell: powershell.exe -ExecutionPolicy Bypass
       - run:
           name: get env var
-          command: "[Environment]::GetEnvironmentVariable('Foo')"
+          command: $env:Foo
+          shell: powershell.exe -ExecutionPolicy Bypass
