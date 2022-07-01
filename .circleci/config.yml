@@ -31,10 +31,10 @@ jobs:
           command: |
             setx BAND CIRCLEJERKS /m
             refreshenv
-            echo "%BAND%"
+            echo %BAND%
           shell: cmd.exe
       - run:
           name: echo hello
-          command: echo "%BAND%"
+          command: echo %BAND%
           shell: cmd.exe
    
