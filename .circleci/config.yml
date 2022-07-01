@@ -26,5 +26,5 @@ jobs:
           shell: cmd.exe
       - run:
           name: set env var
-          command: '$Env:COMPUTERNAME'
+          command: '$Env:PUNX'
           shell: start powershell
