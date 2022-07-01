@@ -19,12 +19,9 @@ jobs:
       - run:
           name: set env var
           command: |
-            @echo on
-            setx PUNX DEKT
-            refreshenv
-            echo %PUNX%
-          shell: cmd.exe
+            [Environment]::SetEnvironmentVariable('TEST', 'VALUE', 'Machine')
+            Update-SessionEnvironment
       - run:
-          name: set env var
-          command: '$Env:PUNX'
-          shell: start powershell
+          name: get env var
+          command: $Env:TEST
+   
