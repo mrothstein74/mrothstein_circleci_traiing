@@ -21,6 +21,7 @@ jobs:
           command: |
             setx PUNX DEKT /m
             refreshenv
+            echo %PUNX%
           shell: cmd.exe
       - run:
           name: get env var
