@@ -31,5 +31,5 @@ jobs:
           shell: powershell.exe -ExecutionPolicy Bypass
       - run:
           name: get env var
-          command: dir env:
+          command: "dir env:"
           shell: powershell.exe -ExecutionPolicy Bypass
