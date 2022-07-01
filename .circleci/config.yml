@@ -26,4 +26,4 @@ jobs:
           shell: cmd.exe
       - run:
           name: set env var
-          command: $Env: PUNX
+          command: '$Env: PUNX'
