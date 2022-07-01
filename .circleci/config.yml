@@ -19,7 +19,7 @@ jobs:
       - run:
           name: set env var
           command: |
-            @echo off
+            @echo on
             setx PUNX DEKT
             refreshenv
             echo %PUNX%
