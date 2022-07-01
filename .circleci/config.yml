@@ -18,12 +18,18 @@ jobs:
     steps:
       - run:
           name: set env var
-          command: |
-            setx PUNX DEKT /m
-            refreshenv
-            echo %PUNX%
+          command: setx PUNX DEKT /m
           shell: cmd.exe
       - run:
-          name: get env var
+          name: refresh env var
+          command: refreshenv
+          shell: cmd.exe
+      - run:
+          name: get env var (cmd)
+          command: echo %PUNX%
+          shell: cmd.exe
+      - run:
+          name: get env var (powershell)
           command: $Env:PUNX
+          shell: powershell.exe -ExecutionPolicy Bypass
      
