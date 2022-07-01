@@ -31,5 +31,5 @@ jobs:
           shell: powershell.exe -ExecutionPolicy Bypass
       - run:
           name: get env var
-          command: "'Value is: {0}' -f (Get-Content -Path Env:FOO)"
+          command: "'Value is: {0}' -f '(Get-Content -Path Env:FOO)'"
           shell: powershell.exe -ExecutionPolicy Bypass
