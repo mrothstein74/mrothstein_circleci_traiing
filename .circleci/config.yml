@@ -28,6 +28,13 @@ jobs:
             $Env:TEST
       - run:
           name: echo hello
-          command: echo "HELLO"
-          shell: cmd
+          command: |
+            setx BAND CIRCLEJERKS /m
+            refreshenv
+            echo "%BAND%"
+          shell: cmd.exe
+      - run:
+          name: echo hello
+          command: echo "%BAND%"
+          shell: cmd.exe
    
