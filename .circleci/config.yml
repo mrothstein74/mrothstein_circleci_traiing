@@ -27,7 +27,7 @@ jobs:
           shell: cmd.exe
       - run:
           name: set env var
-          command: $env:FOO = 'BAR'
+          command: "[Environment]::SetEnvironmentVariable('FOO', 'BAR', 'Machine')"
           shell: powershell.exe -ExecutionPolicy Bypass
       - run:
           name: get env var
