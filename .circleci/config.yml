@@ -18,9 +18,9 @@ jobs:
     steps:
       - run:
           name: set env var
-          command: | 
+          command: |
+            @echo off
             setx PUNX DEKT
             refreshenv
-      - run: echo "hello world"
-      
-     
+            echo %PUNX%
+          shell: cmd.exe
