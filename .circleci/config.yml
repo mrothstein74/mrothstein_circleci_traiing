@@ -26,4 +26,8 @@ jobs:
             #Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
             #Update-SessionEnvironment
             $Env:TEST
+      - run:
+          name: echo hello
+          command: echo "HELLO"
+          shell: cmd
    
