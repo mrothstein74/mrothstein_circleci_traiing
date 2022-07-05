@@ -9,8 +9,8 @@ jobs:
   build-windows:
     machine:
       #image: windows-server-2019-cuda:current
-      # image: windows-server-2019-vs2019:current
-      image: windows-server-2022-gui:current
+       image: windows-server-2019-vs2019:current
+      #image: windows-server-2022-gui:current
       #resource_class: windows.gpu.nvidia.medium
       resource_class: windows.medium
       shell: powershell.exe -ExecutionPolicy Bypass
