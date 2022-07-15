@@ -22,19 +22,4 @@ jobs:
             "[Environment]::SetEnvironmentVariable('TEST', 'VALUE', 'Machine')"
       - run:
           name: get env var
-          command: |
-            #Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
-            #Update-SessionEnvironment
-            $Env:TEST
-      - run:
-          name: echo hello
-          command: |
-            setx BAND CIRCLEJERKS /m
-            refreshenv
-            echo %BAND%
-          shell: cmd.exe
-      - run:
-          name: echo hello
-          command: echo %BAND%
-          shell: cmd.exe
-   
+          command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' TEST
