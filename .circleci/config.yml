@@ -19,9 +19,9 @@ jobs:
       - run:
           name: set env var
           command: |
-            setx "APP_VERSION" "1.2.3" /M
+            setx MICHAEL ROTHSTEIN /M
             refreshenv
           shell: cmd.exe
       - run:
           name: get env var
-          command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' APP_VERSION
+          command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' MICHAEL
