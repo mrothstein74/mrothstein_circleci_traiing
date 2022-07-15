@@ -20,6 +20,7 @@ jobs:
           name: set env var
           command: |
             "[Environment]::SetEnvironmentVariable('TEST', 'VALUE', 'Machine')"
+            refreshenv
       - run:
           name: get env var
           command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' TEST
