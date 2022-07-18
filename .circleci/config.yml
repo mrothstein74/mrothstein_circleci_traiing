@@ -36,8 +36,4 @@ jobs:
 
             # echo $sha1
             $tempvar = "APP_VERSION_$sha1"
-            #echo $TEMP
-
-            setx app_version_name $tempvar /M
-
-            $app_version_name
+            echo $tempvar
