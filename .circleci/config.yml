@@ -33,6 +33,6 @@ jobs:
 
             $APP_VERSION_NAME = "APP_VERSION_$env:CIRCLE_SHA1"
             echo $APP_VERSION_NAME
-            [System.Environment]::SetEnvironmentVariable('MRTEST',"APP_VERSION_810d84ec1d7af537a09ff0936ce3894159b35b1f",[System.EnvironmentVariableTarget]::Machine)
+            [System.Environment]::SetEnvironmentVariable('MRTEST',"APP_VERSION_810d84ec1d7af537a09ff0936ce3894159b35b1f",[System.EnvironmentVariableTarget]::User)
             refreshenv
             gci env:
