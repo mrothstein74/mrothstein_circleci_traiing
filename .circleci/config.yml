@@ -40,4 +40,4 @@ jobs:
 
             setx app_version_name $tempvar /M
 
-            echo $app_version_name
+            $app_version_name
