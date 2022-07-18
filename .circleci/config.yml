@@ -34,5 +34,6 @@ jobs:
             $APP_VERSION_NAME = "APP_VERSION_$env:CIRCLE_SHA1"
 
             echo $APP_VERSION_NAME
+            refreshenv
 
             $APP_VERSION = (Get-Variable -name $APP_VERSION_NAME).Value
