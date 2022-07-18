@@ -32,7 +32,8 @@ jobs:
             APP_VERSION: 1.2.3
           command: |
 
-            setx SHA1 %CIRCLE_SHA1%
+            setx SHA1 %CIRCLE_SHA1% /M
+            refreshenv
             "%SHA1%"
 
             # echo $sha1
