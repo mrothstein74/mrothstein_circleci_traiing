@@ -33,7 +33,7 @@ jobs:
           command: |
 
             set sha1=%CIRCLE_SHA1%
-            %sha1%
+            "%sha1%""
 
             # echo $sha1
             REM $tempvar = "APP_VERSION_$sha1"
