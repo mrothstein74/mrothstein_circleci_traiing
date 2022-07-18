@@ -32,8 +32,8 @@ jobs:
             APP_VERSION: 1.2.3
           command: |
 
-            setx sha1 %CIRCLE_SHA1%
-            "%sha1%"
+            setx SHA1 %CIRCLE_SHA1%
+            "%SHA1%"
 
             # echo $sha1
             REM $tempvar = "APP_VERSION_$sha1"
