@@ -27,17 +27,12 @@ jobs:
           command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' MICHAEL
       - run:
           name: Print var
-          shell: cmd.exe
           environment:
             APP_VERSION: 1.2.3
           command: |
 
-            setx SHA1 %CIRCLE_SHA1% /M
-            refreshenv
-            %SHA1%
+            $APP_VERSION_NAME = "APP_VERSION_$env:CIRCLE_SHA1"
 
-            # echo $sha1
-            REM $tempvar = "APP_VERSION_$sha1"
-            REM $tempvalue = $env:tempvar
-            REM echo $tempvalue
-            REM setx targetvar $tempvalue /m
+            echo $APP_VERSION_NAME
+
+            $APP_VERSION = (Get-Variable -name $APP_VERSION_NAME).Value
