@@ -27,16 +27,16 @@ jobs:
           command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' MICHAEL
       - run:
           name: Print var
-          shell: powershell.exe
+          shell: cmd.exe
           environment:
             APP_VERSION: 1.2.3
           command: |
 
-            $sha1 = $env:CIRCLE_SHA1
+            set sha1=%CIRCLE_SHA1%
+            echo %sha1%
 
             # echo $sha1
-            $tempvar = "APP_VERSION_$sha1"
-            $tempvalue = $env:tempvar
-            echo $tempvalue
-            setx targetvar $tempvalue /m
-            Write-Host "targetvar: $targetvar"
+            REM $tempvar = "APP_VERSION_$sha1"
+            REM $tempvalue = $env:tempvar
+            REM echo $tempvalue
+            REM setx targetvar $tempvalue /m
