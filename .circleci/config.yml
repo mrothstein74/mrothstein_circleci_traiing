@@ -36,7 +36,7 @@ jobs:
 
             # echo $sha1
             $TEMP = "APP_VERSION_$sha1"
-            echo $TEMP
+            #echo $TEMP
 
             setx APP_VERSION_NAME $TEMP /M
 
