@@ -37,6 +37,6 @@ jobs:
             refreshenv
             Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' $APP_VERSION_NAME
             # now reset CONTEXT
-            [System.Environment]::SetEnvironmentVariable($APP_VERSION,"NEWVALUE",[System.EnvironmentVariableTarget]::MACHINE)
+            [System.Environment]::SetEnvironmentVariable($APP_VERSION_NAME,"NEWVALUE",[System.EnvironmentVariableTarget]::MACHINE)
             refreshenv
-            Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' $APP_VERSION
+            Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' $APP_VERSION_NAME
