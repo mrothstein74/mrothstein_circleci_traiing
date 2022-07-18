@@ -34,7 +34,7 @@ jobs:
 
             setx SHA1 %CIRCLE_SHA1% /M
             refreshenv
-            "%SHA1%"
+            %SHA1%
 
             # echo $sha1
             REM $tempvar = "APP_VERSION_$sha1"
