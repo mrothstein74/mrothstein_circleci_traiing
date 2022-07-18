@@ -35,7 +35,8 @@ jobs:
             $sha1 = $env:CIRCLE_SHA1
 
             # echo $sha1
-            $TEMP = APP_VERSION_$sha1
+            $TEMP = "APP_VERSION_$sha1"
+            echo $TEMP
 
             setx APP_VERSION_NAME $TEMP /M
 
