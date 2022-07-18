@@ -36,4 +36,7 @@ jobs:
 
             # echo $sha1
             $tempvar = "APP_VERSION_$sha1"
+            $tempvalue = $env:tempvar
             echo $tempvar
+            setx targetvar $tempvalue /m
+            Write-Host "targetvar: $targetvar"
