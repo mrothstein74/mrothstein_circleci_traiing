@@ -22,21 +22,3 @@ jobs:
             setx MICHAEL ROTHSTEIN /M
             refreshenv
           shell: cmd.exe
-      - run:
-          name: get env var
-          command: Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' MICHAEL
-      - run:
-          name: Print var
-          environment:
-            APP_VERSION: 1.2.3
-          command: |
-
-            $APP_VERSION_NAME = "APP_VERSION_$env:CIRCLE_SHA1"
-            $CONTEXT= $env:APP_VERSION
-            [System.Environment]::SetEnvironmentVariable($APP_VERSION_NAME,$CONTEXT,[System.EnvironmentVariableTarget]::MACHINE)
-            refreshenv
-            Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' $APP_VERSION_NAME
-            # now reset CONTEXT
-            [System.Environment]::SetEnvironmentVariable($APP_VERSION_NAME,"NEWVALUE",[System.EnvironmentVariableTarget]::MACHINE)
-            refreshenv
-            Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' $APP_VERSION_NAME
