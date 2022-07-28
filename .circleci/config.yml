@@ -17,7 +17,7 @@ jobs:
       #docker_layer_caching: true
     steps:
       - run:
-          name: set env var
+          name: set env var.
           command: |
             setx MICHAEL ROTHSTEIN /M
             refreshenv
