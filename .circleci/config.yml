@@ -19,6 +19,6 @@ jobs:
       - run:
           name: set env var.
           command: |
-            setx MICHAEL ROTHSTEIN /M
+            setx MICHAEL ROTHSTEIN1 /M
             refreshenv
           shell: cmd.exe
