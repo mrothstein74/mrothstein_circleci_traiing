@@ -1,10 +1,10 @@
 version: 2.1
 orbs:
   win: circleci/windows@5.0
-  version: edge
 jobs:
   build:
     executor: win/server-2022
+    version: edge
     steps:
       - run: Write-Host 'Hello, Windows'
 workflows:
