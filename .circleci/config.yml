@@ -1,13 +1,24 @@
 version: 2.1
-orbs:
-  win: circleci/windows@5.0 
-jobs:
-  build:
-    executor: win/server-2022
-    version: edge
-    steps:
-      - run: Write-Host 'Hello, Windows'
+
 workflows:
-  my-workflow:
+  build-and-unittest:
     jobs:
-      - build
+      - build-windows
+
+jobs:
+  build-windows:
+    machine:
+      #image: windows-server-2019-cuda:current
+      # image: windows-server-2019-vs2019:current
+      image: windows-server-2022-gui:edge
+      #resource_class: windows.gpu.nvidia.medium
+      resource_class: windows.medium
+      shell: powershell.exe -ExecutionPolicy Bypass
+      #docker_layer_caching: true
+    steps:
+      - run:
+          name: set env var.
+          command: |
+            setx MICHAEL ROTHSTEIN1 /M
+            refreshenv
+          shell: cmd.exe
