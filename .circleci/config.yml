@@ -8,7 +8,7 @@ workflows:
 jobs:
   build-windows:
     machine:
-      image: windows-server-2019-cuda:current
+      image: windows-server-2019-cuda:previous
       #image: windows-server-2019-vs2019:stable
       #image: windows-server-2022-gui:current
       resource_class: windows.gpu.nvidia.medium
