@@ -21,5 +21,9 @@ jobs:
           command: |
             setx MICHAEL ROTHSTEIN1 /M
             refreshenv
-            echo %MICHAEL%
           shell: cmd.exe
+      - run:
+          name: get env var.
+          command: |
+            $Env:MICHAEL
+          shell: powershell.exe -ExecutionPolicy Bypass
