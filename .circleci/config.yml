@@ -17,15 +17,12 @@ jobs:
       #docker_layer_caching: true
     steps:
       - run:
-          name: set env var.
-          command: |
-            setx MICHAEL ROTHSTEIN1 /M
-            refreshenv
-          shell: cmd.exe
-      - run:
           name: get env var.
           command: |
             $sha1 = $env:CIRCLE_SHA1
-            $tempvar = "APP_VERSION_$sha1"
-            echo $tempvar
-          shell: powershell.exe -ExecutionPolicy Bypass
+            $Env:TEMPVAR = "APP_VERSION_$sha1"
+            $Env:TEMPVAR
+      - run:
+          name: get env var.
+          command: |
+            $Env:TEMPVAR
