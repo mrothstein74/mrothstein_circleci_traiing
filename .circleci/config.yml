@@ -20,9 +20,9 @@ jobs:
           name: get env var.
           command: |
             $sha1 = $env:CIRCLE_SHA1
-            $Env:TEMPVAR = "APP_VERSION_$sha1"
-            $Env:TEMPVAR
-            [System.Environment]::SetEnvironmentVariable($TEMPVAR,"TEST3",[System.EnvironmentVariableTarget]::MACHINE)
+            $tempvar = "APP_VERSION_$sha1"
+            $tempvar
+            [System.Environment]::SetEnvironmentVariable("TEMPVAR",$tempvar,[System.EnvironmentVariableTarget]::MACHINE)
       - run:
           name: get env var.
           command: |
