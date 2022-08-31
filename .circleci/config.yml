@@ -25,4 +25,4 @@ jobs:
       - run:
           name: get env var.
           command: |
-            $Env:TEMPVAR
+             Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' $TEMPVAR
