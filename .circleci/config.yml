@@ -11,8 +11,8 @@ jobs:
       #image: windows-server-2019-cuda:previous
       #image: windows-server-2019-vs2019:stable
       image: windows-server-2022-gui:current
-      resource_class: windows.gpu.nvidia.medium
-      #resource_class: windows.medium
+      #resource_class: windows.gpu.nvidia.medium
+      resource_class: windows.medium
       shell: powershell.exe -ExecutionPolicy Bypass
       #docker_layer_caching: true
     steps:
