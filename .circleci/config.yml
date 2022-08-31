@@ -22,6 +22,7 @@ jobs:
             $sha1 = $env:CIRCLE_SHA1
             $Env:TEMPVAR = "APP_VERSION_$sha1"
             $Env:TEMPVAR
+            [System.Environment]::SetEnvironmentVariable($TEMPVAR,"TEST3",[System.EnvironmentVariableTarget]::MACHINE)
       - run:
           name: get env var.
           command: |
