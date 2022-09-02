@@ -17,7 +17,7 @@ jobs:
       #docker_layer_caching: true
     steps:
       - run:
-          name: get env var.
+          name: get env var...
           command: |
             $sha1 = $env:CIRCLE_SHA1
             $tempvar = "APP_VERSION_$sha1"
