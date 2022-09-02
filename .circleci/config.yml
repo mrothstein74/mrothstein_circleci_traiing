@@ -24,6 +24,6 @@ jobs:
             $tempvar
             [System.Environment]::SetEnvironmentVariable("TEMPVAR",$tempvar,[System.EnvironmentVariableTarget]::MACHINE)
       - run:
-          name: get env var.
+          name: get env var..
           command: |
              Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' "TEMPVAR"
