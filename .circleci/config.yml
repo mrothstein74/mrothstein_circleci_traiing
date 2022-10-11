@@ -10,7 +10,7 @@ jobs:
     machine:
       #  image: windows-server-2019-cuda:previous
       # image: windows-server-2019-vs2019:stable
-      image: windows-server-2022-gui:edge
+      image: windows-server-2022-gui:current
         # image: windows-server-2022-gui:2022.09.1
          #resource_class: windows.gpu.nvidia.medium
     resource_class: windows.medium
