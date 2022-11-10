@@ -13,7 +13,7 @@ jobs:
       image: windows-server-2022-gui:2022.10.1
         # image: windows-server-2022-gui:2022.09.1
          #resource_class: windows.gpu.nvidia.medium
-    resource_class: windows.medium
+    resource_class: windows.2xlarge
     shell: powershell.exe -ExecutionPolicy Bypass
       #docker_layer_caching: true
     steps:
@@ -28,3 +28,5 @@ jobs:
           name: get env var..
           command: |
              Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' "TEMPVAR"
+
+# VS Code Extension Version: 1.0.1
