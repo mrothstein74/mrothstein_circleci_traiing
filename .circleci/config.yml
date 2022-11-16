@@ -11,8 +11,8 @@ jobs:
       #  image: windows-server-2019-cuda:previous
       # image: windows-server-2019-vs2019:stable
       image: windows-server-2022-gui:2022.10.1
-        # image: windows-server-2022-gui:2022.09.1
-         #resource_class: windows.gpu.nvidia.medium
+      # image: windows-server-2022-gui:2022.09.1
+      #resource_class: windows.gpu.nvidia.medium
       #image: windows-server-2019-vs2019:2022.08.1
     resource_class: windows.2xlarge
     shell: powershell.exe -ExecutionPolicy Bypass
@@ -30,4 +30,4 @@ jobs:
           command: |
              Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' "TEMPVAR"
 
-# VS Code Extension Version: 1.0.1
+# VS Code Extension Version: 1.0.2
