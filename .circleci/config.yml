@@ -1,33 +1,20 @@
 version: 2.1
 
-workflows:
-  build-and-unittest:
-    jobs:
-      - build-windows
+orbs:
+  win: circleci/windows@5.0
 
 jobs:
-  build-windows:
-    machine:
-      #  image: windows-server-2019-cuda:previous
-      # image: windows-server-2019-vs2019:stable
-      image: windows-server-2022-gui:2022.10.1
-      # image: windows-server-2022-gui:2022.09.1
-      #resource_class: windows.gpu.nvidia.medium
-      #image: windows-server-2019-vs2019:2022.08.1
-    resource_class: windows.2xlarge
-    shell: powershell.exe -ExecutionPolicy Bypass
-      #docker_layer_caching: true
+  build:
+    executor:
+      name: win/default
     steps:
+      # default shell is Powershell
       - run:
-          name: get env var.
-          command: |
-            $sha1 = $env:CIRCLE_SHA1
-            $tempvar = "APP_VERSION_$sha1"
-            $tempvar
-            [System.Environment]::SetEnvironmentVariable("TEMPVAR",$tempvar,[System.EnvironmentVariableTarget]::MACHINE)
+         command: $(echo hello | Out-Host; $?) -and $(echo world | Out-Host; $?)
+         shell: powershell.exe
       - run:
-          name: get env var..
-          command: |
-             Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' "TEMPVAR"
-
-# VS Code Extension Version: 1.0.2
+         command: echo hello && echo world
+         shell: bash.exe
+      - run:
+         command: echo hello & echo world
+         shell: cmd.exe
