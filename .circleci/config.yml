@@ -19,5 +19,5 @@ jobs:
          command: echo hello & echo world
          shell: cmd.exe
       - run:
-         command: git clone --depth 5 "$CIRCLE_REPOSITORY_URL" --branch "$CIRCLE_BRANCH"
+         command: git --version
          shell: cmd.exe
