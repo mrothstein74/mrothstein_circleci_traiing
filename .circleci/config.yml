@@ -18,3 +18,6 @@ jobs:
       - run:
          command: echo hello & echo world
          shell: cmd.exe
+      - run:
+         command: git --version
+         shell: cmd.exe
