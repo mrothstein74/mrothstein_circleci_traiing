@@ -30,5 +30,9 @@ jobs:
           name: get env var..
           command: |
              Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' "TEMPVAR"
+      - run:
+          name: docker pull sdk
+          command: |
+             docker pull mcr.microsoft.com/dotnet/sdk
 
-# VS Code Extension Version: 1.1.1
+# VS Code Extension Version: 1.2.1
