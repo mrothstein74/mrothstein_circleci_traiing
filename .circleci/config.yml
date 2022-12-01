@@ -31,8 +31,8 @@ jobs:
           command: |
              Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' "TEMPVAR"
       - run:
-          name: docker pull sdk
+          name: install .net sdk 
           command: |
-             docker pull mcr.microsoft.com/dotnet/sdk
+             choco install dotnet-sdk --version 7.0.100 -y
 
 # VS Code Extension Version: 1.2.1
