@@ -1,38 +1,12 @@
-version: 2.1
-
-workflows:
-  build-and-unittest:
-    jobs:
-      - build-windows
-
 jobs:
-  build-windows:
-    machine:
-      #  image: windows-server-2019-cuda:previous
-      # image: windows-server-2019-vs2019:stable
-      #image: windows-server-2022-gui:2022.10.1
-        # image: windows-server-2022-gui:2022.09.1
-         #resource_class: windows.gpu.nvidia.medium
-      #image: windows-server-2019-vs2019:2022.08.1
-      image: windows-server-2022-gui:current
-    resource_class: windows.large
-    shell: powershell.exe -ExecutionPolicy Bypass
-      #docker_layer_caching: true
-    steps:
-      - run:
-          name: get env var.
-          command: |
-            $sha1 = $env:CIRCLE_SHA1
-            $tempvar = "APP_VERSION_$sha1"
-            $tempvar
-            [System.Environment]::SetEnvironmentVariable("TEMPVAR",$tempvar,[System.EnvironmentVariableTarget]::MACHINE)
-      - run:
-          name: get env var..
-          command: |
-             Get-ItemPropertyValue 'registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' "TEMPVAR"
-      - run:
-          name: install .net sdk 
-          command: |
-             choco install dotnet-sdk --version 7.0.100 -y
+  build:
+    docker:
+     - image: mcr.microsoft.com/dotnet/nightly/sdk:6.0
 
-# VS Code Extension Version: 1.2.1
+
+    steps:
+      - run: |
+          echo '#!/bin/sh' > run.sh
+          echo 'echo Hello world!' >> run.sh
+          chmod +x run.sh
+      - run: ./run.sh
